@@ -1,8 +1,24 @@
 <?php
 	$config = array(
-		'viewconfig' => array(
-			'left_delimiter' => '{',  'right_delimiter' => '}',  'template_dir' => 'app',  'compile_dir' => 'data/template_c'),
+		'viewtype'   =>	'smarty',
+
+		'viewconfig' =>	array(
+			'LeftDelimiter'		=>	'{',
+			'RightDelimiter' 	=>	'}',
+			'TemplateDir'		=>	'tpl',
+			'CompileDir'		=>	'data/template_c',
+			'CacheDir'			=>	'data/cache',
+			// 'Caching'			=> 	"Smarty::CACHING_LIFETIME_CURRENT)",
+			// 'CacheLifetime'		=>	10
+		),
+
 		'dbconfig' => array(
-			'dbhost' => 'localhost', 'dbuser'=>'root', 'dbpsw' => '123' , 'dbname' => 'newsreport', 'dbcharset' => 'utf8')
+			'dbtype'	=>	'mysql',
+			'host'		=>	'localhost',
+			'username'	=>	'root',
+			'password'	=>	'',
+			'dbname'	=>	'study_mvc',
+			'port'		=>	3306,
+			'charset'	=>	'utf8'
+		)
 	);
-?>

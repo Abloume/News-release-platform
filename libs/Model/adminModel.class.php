@@ -1,12 +1,18 @@
-<?php 
+<?php
+/**
+ * 从数据库取用户信息
+ */
+class adminModel {
+	//定义表名
+	public $_table = 'admin';
 
-class adminModel{
-	public $_table = 'admin';//定义表名
-
-	function findOne_by_username($username){
-		$sql = 'select * from '.$this->_table.' where username="'.$username.'"';
-		return DB::findOne($sql);
+	/**
+	 * 通过用户名获取用户信息
+	 * @param string $username username
+	 * @return mix
+	 */
+	function findUserInfo($username) {
+		$where = "username = '$username'";
+		return DB::getOneRow($this->_table, $where);
 	}
 }
-
-?>
